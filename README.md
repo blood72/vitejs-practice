@@ -16,3 +16,10 @@ npm install
 npm run dev
 ```
 - https://vitejs.dev/config/#server-options
+
+### TailwindCSS
+- https://tailwindcss.com/docs/guides/vite
+```bash
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+```
