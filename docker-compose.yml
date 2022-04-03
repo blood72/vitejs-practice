@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  node:
+    image: node:gallium
+    ports:
+      - '8000:8000'
+    working_dir: /app
+    environment:
+      - NO_UPDATE_NOTIFIER=true
+    volumes:
+      - ~/.config/npm/gallium:/config
+      - ./:/app
+    tty: true
