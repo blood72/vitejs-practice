@@ -26,7 +26,8 @@ const count = ref(0)
     <a href="https://v3.vuejs.org/" target="_blank">Vue 3 Docs</a>
   </p>
 
-  <button type="button" @click="count++">count is: {{ count }}</button>
+  <button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-1/2 px-1 border border-gray-400 rounded shadow"
+          type="button" @click="count++">count is: {{ count }}</button>
   <p>
     Edit
     <code>components/HelloWorld.vue</code> to test hot module replacement.
@@ -35,18 +36,14 @@ const count = ref(0)
 
 <style scoped>
 a {
-  color: #42b983;
+  @apply text-green-500;
 }
 
 label {
-  margin: 0 0.5em;
-  font-weight: bold;
+  @apply px-2 font-bold
 }
 
 code {
-  background-color: #eee;
-  padding: 2px 4px;
-  border-radius: 4px;
-  color: #304455;
+  @apply bg-neutral-200 px-1 py-1/2 rounded text-slate-700;
 }
 </style>
