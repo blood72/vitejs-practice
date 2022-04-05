@@ -26,7 +26,7 @@ const count = ref(0)
     <a href="https://v3.vuejs.org/" target="_blank">Vue 3 Docs</a>
   </p>
 
-  <button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-1/2 px-1 border border-gray-400 rounded shadow"
+  <button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-0.5 px-1 border border-gray-400 rounded shadow"
           type="button" @click="count++">count is: {{ count }}</button>
   <p>
     Edit
@@ -44,6 +44,6 @@ label {
 }
 
 code {
-  @apply bg-neutral-200 px-1 py-1/2 rounded text-slate-700;
+  @apply bg-neutral-200 px-1 py-0.5 rounded text-slate-700;
 }
 </style>

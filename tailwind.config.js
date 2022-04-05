@@ -11,9 +11,6 @@ module.exports = {
         // sans: ['"DM Sans"', ...defaultTheme.fontFamily.sans],
         sans: ['Avenir', 'Helvetica', 'Arial', 'sans-serif'],
       },
-      padding: {
-        '1\/2': '0.125rem',
-      }
     },
   },
   plugins: [],
