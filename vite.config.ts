@@ -8,8 +8,10 @@ export default defineConfig({
     host: '0.0.0.0',
     port: 8000,
   },
-  alias: {
-    '@': path.resolve(__dirname, './src'),
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
   },
   plugins: [vue()],
 })
