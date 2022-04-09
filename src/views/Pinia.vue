@@ -86,7 +86,7 @@ export default defineComponent({
       }
     }
 
-    async function buy(): void {
+    async function buy(): Promise<void> {
       const n = await cart.purchaseItems()
 
       console.log(`Bought ${n} items`)

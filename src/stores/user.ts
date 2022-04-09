@@ -1,5 +1,5 @@
 // @ts-check
-import { defineStore, acceptHMRUpdate, StateTree } from 'pinia'
+import { defineStore, acceptHMRUpdate } from 'pinia'
 
 interface UserData {
   name: string,
@@ -44,7 +44,7 @@ export const useUserStore = defineStore({
      * @param {string} user
      * @param {string} password
      */
-    async login(user: string, password: string): void {
+    async login(user: string, password: string): Promise<void> {
       const userData = await apiLogin(user, password)
 
       this.$patch({

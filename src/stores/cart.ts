@@ -1,4 +1,4 @@
-import { defineStore, acceptHMRUpdate, StateTree } from 'pinia'
+import { defineStore, acceptHMRUpdate } from 'pinia'
 import { useUserStore } from './user';
 
 interface RawItem {
@@ -9,15 +9,12 @@ interface RawItem {
 export const useCartStore = defineStore({
   id: 'cart',
   state: () => ({
-    rawItems: <RawItem[]>[],
+    rawItems: <Array<string>>[],
   }),
   getters: {
-    /**
-     * @param {StateTree} state
-     */
-    items: (state) =>
-      state.rawItems.reduce((items: Array<RawItem>, item: string): Array<RawItem> => {
-        const existingItem = items.find((it) => it.name === item)
+    items: (state): Array<RawItem> =>
+      state.rawItems.reduce((items: Array<RawItem>, item: string) => {
+        const existingItem = items.find((it: RawItem): boolean => it.name === item)
 
         if (! existingItem) {
           items.push({ name: item, amount: 1 })
@@ -46,7 +43,7 @@ export const useCartStore = defineStore({
       const i = this.rawItems.lastIndexOf(name)
     },
 
-    async purchaseItems(): Promise<any> {
+    async purchaseItems(): Promise<number|void> {
       const user = useUserStore()
       if (! user.name) {
         return
