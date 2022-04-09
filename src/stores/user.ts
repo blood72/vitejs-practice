@@ -1,10 +1,5 @@
-// @ts-check
 import { defineStore, acceptHMRUpdate } from 'pinia'
-
-interface UserData {
-  name: string,
-  isAdmin: boolean,
-}
+import { UserData } from '@/common/types'
 
 /**
  * Simulate a login

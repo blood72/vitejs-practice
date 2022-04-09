@@ -1,10 +1,6 @@
 import { defineStore, acceptHMRUpdate } from 'pinia'
 import { useUserStore } from './user';
-
-interface RawItem {
-  name: string,
-  amount: number,
-}
+import { RawItem } from '@/common/types'
 
 export const useCartStore = defineStore({
   id: 'cart',
