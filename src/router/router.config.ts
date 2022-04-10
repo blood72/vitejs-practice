@@ -4,13 +4,21 @@ import Pinia from '@/views/Pinia.vue'
 import NotFound from '@/views/NotFound.vue'
 
 // causes https://github.com/fengyuanchen/vue-feather/issues/8
-const Test = { template: '<div></div>' }
+export const Test = { template: '<div></div>' }
 
-const routerMap: RouteRecordRaw[] = [
-  <RouteRecordRaw>{ path: '/', name: 'Home', component: Home },
-  <RouteRecordRaw>{ path: '/pinia', name: 'Pinia', component: Pinia },
-  <RouteRecordRaw>{ path: '/test', name: 'Test', component: Test },
-  <RouteRecordRaw>{ path: '/:path(.*)', component: NotFound, meta: { error: true } },
+const routerMap: Array<RouteRecordRaw> = [
+  { path: '/', name: 'Home', component: Home },
+  { path: '/pinia', name: 'Pinia', component: Pinia },
+  { path: '/test', name: 'Test', component: Test },
+  {
+    path: '/about',
+    name: 'About',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */'@/views/About.vue')
+  },
+  { path: '/:path(.*)', component: NotFound, meta: { error: true } },
 ]
 
 export default routerMap
