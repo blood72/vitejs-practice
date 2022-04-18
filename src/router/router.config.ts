@@ -1,6 +1,7 @@
 import { RouteRecordRaw } from 'vue-router'
 import Home from '@/views/Home.vue'
 import Pinia from '@/views/Pinia.vue'
+import TodoList from '@/views/TodoList.vue'
 import NotFound from '@/views/NotFound.vue'
 
 // causes https://github.com/fengyuanchen/vue-feather/issues/8
@@ -9,6 +10,7 @@ export const Test = { template: '<div></div>' }
 const routerMap: Array<RouteRecordRaw> = [
   { path: '/', name: 'Home', component: Home },
   { path: '/pinia', name: 'Pinia', component: Pinia },
+  { path: '/todo', name: 'Todo', component: TodoList },
   { path: '/test', name: 'Test', component: Test },
   {
     path: '/about',
